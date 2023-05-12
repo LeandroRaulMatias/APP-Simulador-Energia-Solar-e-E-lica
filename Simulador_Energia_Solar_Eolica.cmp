@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="number1" type="Decimal" /> <!-- Usado para cálculo em KW/h -->
+    <aura:attribute name="number2" type="Decimal" /> <!-- Não usado - Seria para "Quanto em R$ o cliente está disposto a gastar" -->
+    <aura:attribute name="output" type="Decimal" />  <!-- Resultado dos Calculos -->
+    
+    <div class='slds-box slds-theme_default'>
+        <h1 class='slds-align_absolute-center slds-text-heading_large'>Simulador Valor Energia Solar e Eólica</h1>
+    <lightning:input name="firstInput" label="Adicione o Valor desejado em KWh:" value="{!v.number1}" />
+        <!--<lightning:input name="secondInput" label="Adicione o Valor do investimento desejado R$:" value="{!v.number2}" />-->
+    <br/>
+    <lightning:buttonGroup> <!-- Abaixo a lista de botões-->
+        <lightning:button label="Valor Energia Solar Estimado" onclick="{!c.aaa}" />
+        <lightning:button label="Valor Energia Eólica Estimado" onclick="{!c.bbb}" />
+        <lightning:button label="Area Solar Estimado" onclick="{!c.ccc}" />
+        <lightning:button label="Area Eólica Estimado" onclick="{!c.ddd}" />
+        <lightning:button label="Clear" onclick="{!c.clear}" />
+    </lightning:buttonGroup>
+    
+    <div class="slds-m-top_medium">
+    <p>Resultado: <span style="color: red">{!v.output}</span></p>
+    </div>
+        
+    </div>
+</aura:component>
